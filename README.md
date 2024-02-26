@@ -42,11 +42,14 @@ Other things to change:
 ***
 
 
-# OpenCore CHIPSET_MODEL (CPU_GENERATION)
-OpenCore Hackintosh configuration example for the **MOTHERBOARD_MODEL** motherboard with a CPU_MODEL. 
+# OpenCore ASUS UX390UA for Intel Kaby Lake
+This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop with Intel Kaby Lake processors. 
 
-<img src="https://github.com/Coopydood/OpenCore-Z490E-CometLake/assets/39441479/af012dbc-dd39-474e-bb11-3f5ed0682cd3" alt="Image" width="1400"/>
-<p align="center"><i>YOUR IMAGE HERE.</i></p>
+> [!WARNING]
+> This GitHub repository does not serve as the definitive solution, as the critical issues indicated in Problems section are yet to be solved.
+
+<img src="#" alt="Image" width="1400"/>
+<p align="center"></p>
 
 <br>
 
@@ -54,35 +57,37 @@ OpenCore Hackintosh configuration example for the **MOTHERBOARD_MODEL** motherbo
 
 ### macOS
 
-- [x] VERSION_NAME
+- [x] macOS Ventura
+- [ ] macOS Sonoma (and beyond)
 
 ### Hardware
 
-- [ ] Dedicated GPU (GPU_MODEL)
-- [ ] iGPU (GPU_INTEGRATED_MODEL)
-- [ ] NVMe drives
-- [ ] SATA drives
-- [ ] USB 3.1 (XHCI)
-- [ ] Ethernet
-- [ ] Wi-Fi
+- [x] iGPU (Intel HD Graphics 620)
+- [x] NVMe drive
+- [x] USB 3.1 (XHCI)
+- [ ] Ethernet (not tested)
+- [x] Keyboard
+- [ ] Keyboard backlight
+- [x] Trackpad
+- [x] Function keys
+- [x] Wi-Fi
 - [ ] Bluetooth
-- [ ] Camera
-- [ ] Sound
+- [x] Camera
+- [x] Sound
   
 ### Software
 
 - [ ] AirDrop
-- [ ] iMessage
-- [ ] FaceTime
+- [x] iMessage
+- [x] FaceTime
 - [ ] Unlock with Apple Watch
-- [ ] QE/CI graphics acceleration
-- [ ] Metal support
-- [ ] Temperature sensors
-- [ ] Sleep / Wake
-- [ ] RTC (protection)
-- [ ] Hyperthreading
-- [ ] Virtualisation
-- [ ] Memory bank configuration
+- [x] QE/CI graphics acceleration
+- [x] Metal support
+- [X] Temperature sensors
+- [x] Sleep / Wake
+- [x] RTC (protection)
+- [x] Hyperthreading
+- [ ] Virtualisation (not tested)
   
 <br>
 
@@ -90,9 +95,12 @@ OpenCore Hackintosh configuration example for the **MOTHERBOARD_MODEL** motherbo
 
 ## Problems
 
-<ul>
-<li><b>YOUR PROBLEM HERE</b></li>
-DESCRIBE YOUR PROBLEM HERE
+### Critical
+
+> [!CAUTION]
+><ul>
+><li><b>YOUR PROBLEM HERE</b></li>
+>DESCRIBE YOUR PROBLEM HERE
 
 <br>
 
@@ -102,7 +110,9 @@ DESCRIBE YOUR PROBLEM HERE
 <br><br>
 
 <li><b><s>FIXED PROBLEM EXAMPLE</s> ‏‏‎ ‏‏‎ ‎‎‏‏‎ ‎ 🎉 FIXED!</b></li>
-<s>THE ART OF FIXING A PROBLEM AS DESCRIBED HERE</s>
+THE ART OF FIXING A PROBLEM AS DESCRIBED HERE
+
+<br>
 
 > [!TIP]
 > Describe to viewers how you managed to fix the issue here.
@@ -117,17 +127,15 @@ DESCRIBE YOUR PROBLEM HERE
 The specs of the main system that the OpenCore configuration targets.
 
 | **Motherboard** |                  MOTHERBOARD_MODEL                 |
-|-----------------|:-------------------------------------------------------------:|
-| **CPU**         |                      CPU_MODEL                     |
-| **Chipset**     |                             CHIPSET_MODEL                            |
-| **Generation**  |                           CPU_GENERATION                          |
-| **Memory**      |                       HOST_RAM                       |
-| **Storage**     |                     STORAGE_MODEL                    |
-| **GPU**         | GPU_MODEL<br>~~DISABLED_GPU_MODEL~~ * |
-| **NIC**         |                  ETHERNET_MODEL                  |
+|-----------------|:--------------------------------------------------:|
+| **CPU**         |                      Intel i7-7500U                |
+| **Chipset**     |             Intel SR2ZV (to check)                 |
+| **Generation**  |                           Kaby Lake                |
+| **Memory**      |                       16GB, manufacturer unknown   |
+| **GPU**         | Intel HD Graphics 620                              |
+| **NIC**         |                                      |
 
-> [!NOTE]
-> The system contains a **DISABLED_GPU_MODEL** graphics card, but it has been intentionally disabled through a custom YOUR_METHOD.
+
 
 ***
 
