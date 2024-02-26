@@ -3,20 +3,20 @@
 This repo is intended to be used as a template for those wanting to share their OpenCore EFI files with others on GitHub, also providing helpful setup information.
 
 Things to replace:
-- ``CPU_MODEL`` (e.g. Intel® Core™ i9-10900K)
-- ``CPU_GENERATION`` (e.g. Comet Lake)
-- ``CHIPSET_MODEL`` (e.g. Z490)
-- ``GPU_MODEL`` (e.g. AMD RX 5700 XT)
-- ``GPU_INTEGRATED_MODEL`` (e.g. Intel UHD 630)
-- ``MOTHERBOARD_MODEL`` (e.g. ASUS ROG STRIX Z490-E GAMING)
-- ``VERSION_NAME`` (e.g. macOS Sonoma)
-- ``HOST_RAM`` (e.g. 64 GB DDR4 3200MHz)
-- ``STORAGE_MODEL`` (e.g. 500 GB WD Blue NVMe)
-- ``ETHERNET_MODEL`` (e.g. Intel I225-V 2.5Gb)
-- ``DISABLED_GPU_MODEL`` (e.g. NVIDIA RTX 3090)
-- ``SECURE_BOOT_MODEL`` (e.g. j185f)
+- ~~``CPU_MODEL`` (e.g. Intel® Core™ i9-10900K)~~
+- ~~``CPU_GENERATION`` (e.g. Comet Lake)~~
+- ~~``CHIPSET_MODEL`` (e.g. Z490)~~
+- ~~``GPU_MODEL`` (e.g. AMD RX 5700 XT)~~
+- ~~``GPU_INTEGRATED_MODEL`` (e.g. Intel UHD 630)~~
+- ~~``MOTHERBOARD_MODEL`` (e.g. ASUS ROG STRIX Z490-E GAMING)~~
+- ~~``VERSION_NAME`` (e.g. macOS Sonoma)~~
+- ~~``HOST_RAM`` (e.g. 64 GB DDR4 3200MHz)~~
+- ``STORAGE_MODEL`` (e.g. 500 GB WD Blue NVMe) | should I? this laptop houses a nvme not supported by opencore, but is working flawlessly with the latest firmware patch
+- ``ETHERNET_MODEL`` (e.g. Intel I225-V 2.5Gb) | i forgor
+- ~~``DISABLED_GPU_MODEL`` (e.g. NVIDIA RTX 3090)~~
+- ``SECURE_BOOT_MODEL`` (e.g. j185f) | as if I knew that one
 - ``BOOT_ARGS`` (e.g. ``-v keepsyms=1``)
-- ``MAC_MODEL`` (e.g. iMac20,2)
+- ~~``MAC_MODEL`` (e.g. iMac20,2)~~
 
 Other things to change:
 - Problem list, including any fixes
@@ -25,7 +25,7 @@ Other things to change:
 - Any additional kexts you use in **Kernel**
 - Any patches you may have added in **Kernel**
 - Any other **NVRAM** contents
-- Your chosen **SMBIOS** Mac model, and why you chose it
+- Your chosen **SMBIOS** Mac model, ~~and why you chose it~~
 - The drivers you use in **UEFI**
 - A gallery of your working setup in **Gallery**
 - Your disclaimers in **Disclaimer**
@@ -43,7 +43,9 @@ Other things to change:
 
 
 # OpenCore ASUS UX390UA for Intel Kaby Lake
-This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop with Intel Kaby Lake processors. 
+This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop with Intel Kaby Lake processor. This repository has all information you need to run Ventura on this machine.
+
+[This OpenCore configuration is a modified template by @Coopydood. This text will lead to the source project.](https://github.com/Coopydood/OpenCore-Z490E-CometLake)
 
 > [!WARNING]
 > This GitHub repository does not serve as the definitive solution, as the critical issues indicated in Problems section are yet to be solved.
@@ -95,14 +97,13 @@ This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop wit
 
 ## Problems
 
-### Critical
-
-> [!CAUTION]
+> [!CAUTION] CRITICAL ISSUE
 ><ul>
-><li><b>YOUR PROBLEM HERE</b></li>
->DESCRIBE YOUR PROBLEM HERE
+><li><b>Internal Display (eDP) detected but displaying black</b></li>
+> Despite me trying to find correct framebuffer patches, replacing SSDT's, and adding/deleting .kext's, I'm yet to fix the internal display. I have not been fruitful on my attempts, despite trying to fix the issue with multiple people, who have been longer in the hackintoshing game longer than I have. Please, if you have ANY information on how to fix this issue, leave it in issues. 
 
-<br>
+
+
 
 <li><b>ANOTHER PROBLEM HERE</b></li>
 DESCRIBE YOUR PROBLEM HERE
@@ -131,10 +132,10 @@ The specs of the main system that the OpenCore configuration targets.
 | **CPU**         |                      Intel i7-7500U                |
 | **Chipset**     |             Intel SR2ZV (to check)                 |
 | **Generation**  |                           Kaby Lake                |
-| **Memory**      |                       16GB, manufacturer unknown   |
+| **Memory**      |                       16GB DIMM, manufacturer unknown   |
 | **GPU**         | Intel HD Graphics 620                              |
 | **NIC**         |                                      |
-
+>[!IMPORTANT] i forgor
 
 
 ***
@@ -146,6 +147,7 @@ SSDTs used:
 - SSDT-2
 - SSDT-3
   
+>todo: replace
 ***
 
 ## DeviceProperties
@@ -177,6 +179,8 @@ Apple ALC
 |--------------------------|:--------:|:------------:|
 | AAPL,ig-platform-id      |   Data   | ``0300220D`` |
 | layout-id                |   Data   | ``01000000`` |
+
+>todo: replace with that generic sunrise controller data. maybe this is why bluetooth not working
 
 
 ***
@@ -214,6 +218,8 @@ EXAMPLE
 | ReplaceMask |   Data   |                                         |
 | Skip        |  Number  |                    0                    |
 
+>todo: remove, unness.
+
 ***
 
 ## Security
@@ -237,6 +243,8 @@ Contents stored in NVRAM.
 |------------------------|:--------:|:------------:|
 | DefaultBackgroundColor |   Data   | ``00000000`` |
 
+>todo: remove from readme, unnessecary.
+
 <br>
 
 ### 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102
@@ -259,7 +267,9 @@ Contents stored in NVRAM.
 
 ### MAC_MODEL
 
-DESCRIPTION ON WHY YOU PICKED THIS SMBIOS MODEL...?
+This laptop is operating off a `MacbookPro14,1` SMBIOS, which, after a bit of Googling ~~and a very cursed CAPTCHA~~, will end you up with a Mid-2017 Macbook Pro with 4 Thunderbolt 3 ports. Unfortunately, this laptop has three USB-C holes, but this is the closest specced laptop, even though Apple *has* officially supported this CPU. This SMBIOS CPU is a 2.5 GHz Core i7 (i7-7660U). This has also been tested to work fine with `MacbookPro14,3` SMBIOS.
+
+> todo: try other SMBIOS, MBP14,2, MBP15,1 and actually fucking figure out if this Intel CPU was supported by Apple
 
 ***
 
@@ -269,8 +279,7 @@ DESCRIPTION ON WHY YOU PICKED THIS SMBIOS MODEL...?
 
 Drivers in use:
 
-- HFSPlus
-- OpenRuntime
+- OpenRuntime (obviously)
 - ...
   
 ***
@@ -286,4 +295,10 @@ ADD SOME IMAGES TO SHOW OFF YOUR WORK!
 ## Disclaimer
 
 ADD A DISCLAIMER HERE!
+
+***
+
+## Greets
+
+- @Coopydood - thanks for getting me in this "hobby" of mine, thanks for this template, thanks for everything. Owing you a beer. And a russian dictionary.
 
