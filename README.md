@@ -103,8 +103,6 @@ This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop wit
 > Despite me trying to find correct framebuffer patches, replacing SSDT's, and adding/deleting .kext's, I'm yet to fix the internal display. I have not been fruitful on my attempts, despite trying to fix the issue with multiple people, who have been longer in the hackintoshing game longer than I have. Please, if you have ANY information on how to fix this issue, leave it in issues. 
 
 
-
-
 <li><b>ANOTHER PROBLEM HERE</b></li>
 DESCRIBE YOUR PROBLEM HERE
 
@@ -120,7 +118,6 @@ THE ART OF FIXING A PROBLEM AS DESCRIBED HERE
 
 </ul>
 
-
 ***
 
 ## System
@@ -135,8 +132,7 @@ The specs of the main system that the OpenCore configuration targets.
 | **Memory**      |                       16GB DIMM, manufacturer unknown   |
 | **GPU**         | Intel HD Graphics 620                              |
 | **NIC**         |                                      |
->[!IMPORTANT] i forgor
-
+> [!IMPORTANT] i forgor
 
 ***
 
@@ -157,17 +153,17 @@ The following tables display the added PCI devices and their child keys.
 
 ### PciRoot(0x0)/Pci(0x2,0x0)
 
-EXAMPLE
-
 | **Key**                  | **Type** |   **Value**  |
 |--------------------------|:--------:|:------------:|
-| AAPL,ig-platform-id      |   Data   | ``0000923E`` |
-| device-id                |   Data   | ``923E7000`` |
+| AAPL,ig-platform-id      |   Data   | ``00001659`` |
+| device-id                |   Data   | ``16590000`` |
 | framebuffer-fbmem        |   Data   | ``00009000`` |
 | framebuffer-patch-enable |   Data   | ``01000000`` |
 | framebuffer-stolenmem    |   Data   | ``00003001`` |
 | framebuffer-unifiedmem   |   Data   | ``00000080`` |
 | hda-gfx                  |  String  |   onboard-1  |
+
+>todo: fill more info
 
 <br>
 
@@ -227,7 +223,7 @@ EXAMPLE
 **SecureBootModel 》** SECURE_BOOT_MODEL
 
 **Vault 》** Optional
-
+>I don't think I need this one
 
 ***
 
@@ -252,6 +248,8 @@ Contents stored in NVRAM.
 | **Key**       | **Type** | **Value** |
 |---------------|:--------:|:---------:|
 | rtc-blacklist |   Data   |           |
+
+>remove this too? like what the fuck am I gonna block, my virginity?
 
 <br>
 
@@ -289,6 +287,8 @@ Drivers in use:
 ADD SOME IMAGES TO SHOW OFF YOUR WORK!
 
 <img src="https://github.com/Coopydood/OpenCore-Z490E-CometLake/assets/39441479/9dd5dda0-92c3-4cc7-a7e4-3aab714671db" width="30%"></img> <img src="https://github.com/Coopydood/OpenCore-Z490E-CometLake/assets/39441479/4694291b-adcd-4847-99e2-a4f89c9c1ac9" width="60%"></img> <img src="https://github.com/Coopydood/OpenCore-Z490E-CometLake/assets/39441479/569407bd-0893-4974-82f0-ff669d317783" width="45%"></img> <img src="https://github.com/Coopydood/OpenCore-Z490E-CometLake/assets/39441479/c3ec115d-fe2c-4382-9fa3-d73d3c10cfd2" width="45%"></img> 
+
+>todo: I have some pics, just need some more
 
 ***
 
