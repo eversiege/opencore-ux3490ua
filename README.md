@@ -97,7 +97,7 @@ This is an OpenCore Hackintosh configuration example for ASUS UX390UA laptop wit
 
 ## Problems
 
-> [!CAUTION] CRITICAL ISSUE
+> [!CAUTION]
 ><ul>
 ><li><b>Internal Display (eDP) detected but displaying black</b></li>
 > Despite me trying to find correct framebuffer patches, replacing SSDT's, and adding/deleting .kext's, I'm yet to fix the internal display. I have not been fruitful on my attempts, despite trying to fix the issue with multiple people, who have been longer in the hackintoshing game longer than I have. Please, if you have ANY information on how to fix this issue, leave it in issues. 
